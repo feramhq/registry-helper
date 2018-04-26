@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  registry-helper:
+    image: 'feramhq/registry-helper:latest'
+    build:
+      context: ./
+    deploy:
+      replicas: 1
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
